@@ -1,6 +1,17 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
+/* Components */
+import HeaderTop from "@/components/HeaderTop";
+import HeaderMain from "@/components/HeaderMain";
+import NavBar from "@/components/NavBar";
+import MobNavBar from "@/components/MobNavBar";
+
+/* React slick */
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Hero from "@/components/Hero";
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -22,6 +33,11 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <HeaderTop />
+        <HeaderMain />
+        <NavBar />
+        <MobNavBar />
+        <Hero />
         {children}
       </body>
     </html>
