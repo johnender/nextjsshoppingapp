@@ -10,7 +10,7 @@ const Testimonial = () => {
           Testimonails
         </h2>
         <div className='grid lg:grid-cols-[300px_minmax(900px,_1fr)_100px] gap-4'>
-          <div className='border border-gray-300 rounded-2xl grip place-items-center p-6 lg:p-0'>
+          <div className='border border-gray-300 rounded-2xl grid place-items-center p-6 lg:p-0'>
             <Testimony 
             img='./user.jpg' 
             name='Elsa Doe' 
@@ -18,9 +18,10 @@ const Testimonial = () => {
             quotes='./quotes.svg'
             message='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam tristique imperdiet dui, dictum vestibulum justo sagittis ac.' />
           </div>
-          <div className=''>
+          {/* Super important to add the path otherwise it takes it as a module */}
+          <div className="bg-red-600 bg-[url('/cta-banner.jpg')] bg-cover h-[500px] rounded-2xl grid place-items-center">
             <Coupon
-              discount = '25%'
+              discount = '25% Discount'
               title = 'Summer Collection'
               text = 'Starting @ $20'
               cta = 'SHOP NOW'

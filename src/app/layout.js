@@ -10,6 +10,7 @@ import MobNavBar from "@/components/MobNavBar";
 /* React slick */
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Footer from "@/components/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,6 +30,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="./favicon.ico" type="image/x-icon"></link>
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
@@ -37,6 +41,7 @@ export default function RootLayout({ children }) {
         <NavBar />
         <MobNavBar />
         {children}
+        <Footer />
       </body>
     </html>
   );
