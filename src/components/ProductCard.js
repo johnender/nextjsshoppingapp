@@ -5,6 +5,10 @@ import { AiFillStar, AiOutlineStar } from 'react-icons/ai'
 const ProductCard = ({data}) => {
   //calling the current currency from the store
   const currency = "$"
+  let price = parseInt(data.price);
+  if(currency === "₡"){
+    price = (price * 500);
+  }
 
   const generateRating = (rating) => {
     let result = []
@@ -34,9 +38,9 @@ const ProductCard = ({data}) => {
           {generateRating(data.rating)}
         </div>
         <div className='font-bold flex gap-4'>
-          {currency}{data.price}
+          {currency}{price}
           <del className='text-gray-500 font-normal'>
-            {currency}{parseInt(data.price) + 50}.00
+            {currency}{price + 50}.00
             </del>
         </div>
       </div>
